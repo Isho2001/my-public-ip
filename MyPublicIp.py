@@ -1,4 +1,4 @@
-#author: Isha Yok
+#author: Isha Yokh
 
 import subprocess
 import sys
@@ -222,3 +222,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("[!] Program interrupted by user - Exiting")
         sys.exit(0)
+        
+#author: Isha Yokh
