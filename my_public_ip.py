@@ -40,8 +40,8 @@ class Database:
 
 #takes command line arguments
 def take_args():
-    argparser = argparse.ArgumentParser(description=""" [Example 1]: python MyPublicip.py --re ExampleReceiverEmail@ExampleDomain.com --o windows --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24\n
-                                                     [Example 2]: python3 MyPublicip.py --re ExampleReceiverEmail@ExampleDomain.com --o linux --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24 """)
+    argparser = argparse.ArgumentParser(description=""" [Example 1]: python my_public_ip.py --re ExampleReceiverEmail@ExampleDomain.com --o windows --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24\n
+                                                     [Example 2]: python3 my_public_ip.py --re ExampleReceiverEmail@ExampleDomain.com --o linux --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24 """)
     argparser.add_argument("--re", "--receiver_email", help="Email that the IP address will be sent to", required=True)
     argparser.add_argument("--o", "--os", help="OS to be specified so the accurate command can get executed (Available options: Windows/Linux)", required=True)
     argparser.add_argument("--se", "--sender_email", help="Email address that will be used to send the results (Less secure apps must be enabled on your account)", required=True)
@@ -65,14 +65,14 @@ def main():
     command = validate_os(args.o, os_commands)
 
     if command == False:
-        print("[!] Operating System couldn't be verified - run MyPublicIp.py --help for more info")
+        print("[!] Operating System couldn't be verified - run my_public_ip.py --help for more info")
         sys.exit(0)
 
     try:
         print("[!] Obtaining IP address")
         output = execute_command(command)
     except:
-        print("[!] Command couldn't be run - check your internet connection and run MyPublicIp.py --help")
+        print("[!] Command couldn't be run - check your internet connection and run my_public_ip.py --help")
         sys.exit(0)
     
     ip_address, error = validate_and_parse_ip_from_output(output, args.o)
@@ -80,7 +80,7 @@ def main():
     try:
         int(ip_address.replace(".", ""))
     except ValueError:
-        print("[X] IP address format is incorrect - check your internet connection, validate the arguments and make sure you have selected the right OS - run MyPublicIp.py --help")
+        print("[X] IP address format is incorrect - check your internet connection, validate the arguments and make sure you have selected the right OS - run my_public_ip.py --help")
         sys.exit(0)
 
     if error:
