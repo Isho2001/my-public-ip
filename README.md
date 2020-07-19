@@ -3,8 +3,11 @@ A simple automation tool that reports your public IP address to you via email, I
 
 Command line examples:
 
-- sudo python3 my_public_ip.py --re ExampleReceiverEmail@ExampleDomain.com --o linux --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24
-- python my_public_ip.py --re ExampleReceiverEmail@ExampleDomain.com --o windows --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24
+- Windows:
+  - sudo python3 my_public_ip.py --re ExampleReceiverEmail@ExampleDomain.com --o linux --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24
+
+- Linux/Unix:
+  - python my_public_ip.py --re ExampleReceiverEmail@ExampleDomain.com --o windows --se ExampleSenderEmail2@gmail.com --pw ExampleSenderPassword --t 24
 
 
 
