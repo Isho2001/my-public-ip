@@ -1,4 +1,4 @@
-#author: Isha Yokh
+# Author: Isha Yokh
 
 import subprocess
 import sys
@@ -10,15 +10,15 @@ import sqlite3
 import socket
 
 
-#database class that will used to interact with the local database
+# Database class that will used to interact with the local database
 class Database:
-    #constructor initialises database name and creates database connection and cursor
+    # Constructor initialises database name and creates database connection and cursor
     def __init__(self, db_name):
         self.db_name = db_name
         self.sql_connection = sqlite3.connect(db_name)
         self.cursor = self.sql_connection.cursor()
 
-    #sends commands to the local database - no return
+    # Sends commands to the local database - no return
     def send_command(self, command="", **close_db):
         self.cursor.execute(command)
         self.sql_connection.commit()
@@ -26,7 +26,7 @@ class Database:
         if close_db == True:
             self.sql_connection.close()
 
-    #sends query to the local database and returns query output
+    # Sends query to the local database and returns query output
     def send_query(self, query="", **close_db):
         query_return = self.cursor.execute(query)
         query_return = query_return.fetchall()
@@ -51,7 +51,7 @@ def take_args():
 
     return args
 
-#contains main control flow and calls other functions
+# Contains main control flow and calls other functions
 def main():
     args = take_args()
 
@@ -101,7 +101,7 @@ def main():
     check_output_and_database(query_return, ip_address, args, email_message)
 
 
-#checks query return to decide whether to avoid the sending the result as the IP address is already stored in the database and vice versa
+# Checks query return to decide whether to avoid the sending the result as the IP address is already stored in the database and vice versa
 def check_output_and_database(query_return, ip_address, args, email_message):
     email_message += ip_address
     database = Database("IP_addresses.db")
@@ -144,7 +144,7 @@ def check_output_and_database(query_return, ip_address, args, email_message):
         sys.exit(0)
 
 
-#validates the os based on the user input and returns the accurate command to be executed
+# Validates the os based on the user input and returns the accurate command to be executed
 def validate_os(os, os_commands):
     command = ""
 
@@ -156,7 +156,7 @@ def validate_os(os, os_commands):
     return command
 
 
-#executes ns lookup command locally to get the public ip address
+# Executes ns lookup command locally to get the public ip address
 def execute_command(command):
     output = subprocess.run(command, shell=True, capture_output=True)
     output = output.stdout.decode()
@@ -164,7 +164,7 @@ def execute_command(command):
     return output
 
 
-#parses the necessary info from output of the command that's executed locally
+# Parses the necessary info from output of the command that's executed locally
 def validate_and_parse_ip_from_output(output, os):
     altered_output = ""
     error = "[X] Error with command output - check your DNS or internet connection"
@@ -189,7 +189,7 @@ def validate_and_parse_ip_from_output(output, os):
     return altered_output, error
 
 
-#creates message and sends email using free gmail SMTP service
+# Creates message and sends email using free gmail SMTP service
 def send_email(from_email, from_password, to_email, message):
     msg = EmailMessage()
     error = ""
@@ -223,4 +223,4 @@ if __name__ == "__main__":
         print("[!] Program interrupted by user - Exiting")
         sys.exit(0)
         
-#author: Isha Yokh
+# Author: Isha Yokh
