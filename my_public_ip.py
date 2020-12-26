@@ -1,4 +1,4 @@
-# Author: Isha Yokh
+# Author: @IshaYokh
 
 import subprocess
 import sys
@@ -223,4 +223,4 @@ if __name__ == "__main__":
         print("[!] Program interrupted by user - Exiting")
         sys.exit(0)
         
-# Author: Isha Yokh
+# Author: @IshaYokh
