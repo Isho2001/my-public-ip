@@ -37,7 +37,7 @@ optional arguments:
   --t T, --time T       Wait time until IP address is obtained and sent again
                         (time should be in hours)
 ## Licence:
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/IshaYokh/my-public-ip/blob/master/LICENSE) file for details
 
 ## Author:
 - [Isha Yokh](https://github.com/IshaYokh)
