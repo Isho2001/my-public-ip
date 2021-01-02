@@ -1,4 +1,5 @@
 # Author: @IshaYokh
+# Code repo: https://github.com/IshaYokh/my-public-ip
 
 import subprocess
 import sys
@@ -224,3 +225,4 @@ if __name__ == "__main__":
         sys.exit(0)
         
 # Author: @IshaYokh
+# Code repo: https://github.com/IshaYokh/my-public-ip
