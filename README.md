@@ -2,7 +2,7 @@
 
 ## Table of contents
 - [Description](#Description)
-- [Usage guide](#Usage guide)
+- [Usage guide](#"Usage guide")
 - [Licence](#Licence)
 - [Author](#Author)
 
