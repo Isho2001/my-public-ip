@@ -18,7 +18,7 @@ A simple automation tool that reports your public IP address to you via email, I
 
 
 
-## Usage-guide:
+## Usage guide:
 my_public_ip.py [-h] --re RE --o O --se SE --pw PW [--t T]
 
 [Example 1]: python my_public_ip.py --re ExampleReceiverEmail@ExampleDomain.com
