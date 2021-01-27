@@ -1,10 +1,14 @@
 # my-public-ip
 
-## Table of contents
+## Table of contents:
+- [Notice](#Notice)
 - [Description](#Description)
 - [Usage guide](#Usage-guide)
 - [Licence](#Licence)
 - [Author](#Author)
+
+## Notice:
+A similar but better repository can be found at [my-public-ip-v2](https://github.com/IshaYokh/my-public-ip-v2) with more security features for credentials. SMS functionality added, more reliability, and better code formatting.
 
 ## Description:
 A simple automation tool that reports your public IP address to you via email, It must be executed on a Windows or a Linux/Unix box in your LAN, It reports the IP address based on a time interval that the user inserts (optional). It also connects to a local database to store the past IP addresses and avoid duplicate reports. The tool is useful for people that are with ISPs that don't provide static public IP addresses.
